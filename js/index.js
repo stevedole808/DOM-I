@@ -39,4 +39,55 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
+
+const headerImg = document.getElementById('cta-img');
+headerImg.setAttribute('src', siteContent['cta']['img-src']);
+
+const middleImg = document.getElementById('middle-img');
+middleImg.setAttribute('src', siteContent['main-content']['middle-img-src']);
+
+const h1 = document.querySelector("h1");
+h1.innerHTML = siteContent['cta']['h1'].replace(/ /g, '<br>');
+
+const button = document.querySelector('button');
+button.textContent = siteContent['cta']['button'];
+
+const anchors = document.querySelectorAll('a')
+for(let i = 0; i < anchors.length; i++){
+    anchors[i].textContent = siteContent['nav']['nav-item-'+(i+1)];
+    anchors[i].style.color = "green";
+  }
+
+const h4 = document.querySelectorAll('h4');
+h4[0].textContent = siteContent['main-content']['features-h4'];
+h4[1].textContent = siteContent["main-content"]["about-h4"];
+h4[2].textContent = siteContent["main-content"]["services-h4"];
+h4[3].textContent = siteContent["main-content"]["product-h4"];
+h4[4].textContent = siteContent["main-content"]["vision-h4"];
+h4[5].textContent = siteContent["contact"]["contact-h4"];  
+
+
+let p = document.querySelectorAll("p");
+p[0].textContent = siteContent["main-content"]["features-content"];
+p[1].textContent = siteContent["main-content"]["about-content"];
+p[2].textContent = siteContent["main-content"]["services-content"];
+p[3].textContent = siteContent["main-content"]["product-content"];
+p[4].textContent = siteContent["main-content"]["vision-content"];
+p[5].textContent = siteContent["contact"]["address"];
+p[6].textContent = siteContent["contact"]["phone"];
+p[7].textContent = siteContent["contact"]["email"];
+p[8].textContent = siteContent["footer"]["copyright"];
+
+const aChildAppend = document.createElement("a");
+aChildAppend.href = "#";
+aChildAppend.textContent = "Chill";
+// aChildAppend.color.style = "green";
+;const nav = document.querySelector("nav");
+nav.appendChild(aChildAppend);
+
+const aPrepend = document.createElement("a");
+aPrepend.href = "#";
+// aPrepend.color.style = "green";
+aPrepend.textContent = "Chicken";
+nav.prepend(aPrepend);
