@@ -55,7 +55,8 @@ button.textContent = siteContent['cta']['button'];
 
 const anchors = document.querySelectorAll('a')
 for(let i = 0; i < anchors.length; i++){
-    anchors[i].textContent = siteContent["nav"]["nav-item-"+(i+1)];
+    anchors[i].textContent = siteContent['nav']['nav-item-'+(i+1)];
+    anchors[i].style.color = "green";
   }
 
 const h4 = document.querySelectorAll('h4');
@@ -81,10 +82,12 @@ p[8].textContent = siteContent["footer"]["copyright"];
 const aChildAppend = document.createElement("a");
 aChildAppend.href = "#";
 aChildAppend.textContent = "Chill";
-const nav = document.querySelector("nav");
+// aChildAppend.color.style = "green";
+;const nav = document.querySelector("nav");
 nav.appendChild(aChildAppend);
 
 const aPrepend = document.createElement("a");
 aPrepend.href = "#";
+// aPrepend.color.style = "green";
 aPrepend.textContent = "Chicken";
 nav.prepend(aPrepend);
